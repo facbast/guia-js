@@ -1,0 +1,1 @@
+console.log("Guía JavaScript iniciada");
