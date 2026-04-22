@@ -103,3 +103,42 @@ switch (opcion) {
     console.log("Opción no válida");
 }
 console.log("========================================");
+
+// Ejercicio 7. Cuenta regresiva
+console.log("\n=== EJERCICIO 7: CUENTA REGRESIVA ===");
+for (let i = 3; i >= 1; i--) {
+  console.log(i);
+}
+console.log("¡Comienza!");
+console.log("========================================");
+
+// Ejercicio 8. Sumar puntos por rondas
+let puntajeTotal = 0;
+let puntosPorRonda = [10, 15, 20, 25, 30]; // Desafío: cantidades diferentes por ronda
+
+console.log("\n=== EJERCICIO 8: SUMA DE PUNTOS POR RONDAS ===");
+for (let ronda = 1; ronda <= 5; ronda++) {
+  let puntosRonda = puntosPorRonda[ronda - 1];
+  puntajeTotal += puntosRonda;
+  console.log(`Ronda ${ronda}: +${puntosRonda} puntos (Total: ${puntajeTotal})`);
+}
+console.log("Puntaje Total Final:", puntajeTotal);
+console.log("========================================");
+
+// Ejercicio 9. Recorrer un inventario
+const inventario = ["espada", "poción", "llave", "escudo", "mapa"];
+
+console.log("\n=== EJERCICIO 9: INVENTARIO ===");
+console.log("Primer objeto:", inventario[0]);
+console.log("Último objeto:", inventario[inventario.length - 1]);
+console.log("Cantidad total de objetos:", inventario.length);
+console.log("========================================");
+
+// Ejercicio 10. Mostrar todos los objetos
+const inventario_B = ["espada", "poción", "llave", "escudo"];
+
+console.log("\n=== EJERCICIO 10: RECORRER INVENTARIO_B ===");
+for (let i = 0; i < inventario_B.length; i++) {
+  console.log(`Objeto ${i + 1}: ${inventario_B[i]}`);
+}
+console.log("========================================");
