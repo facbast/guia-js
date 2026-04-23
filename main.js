@@ -142,3 +142,66 @@ for (let i = 0; i < inventario_B.length; i++) {
   console.log(`Objeto ${i + 1}: ${inventario_B[i]}`);
 }
 console.log("========================================");
+
+// Ejercicio 11. Agregar y quitar elementos
+let mochila = [];
+
+console.log("\n=== EJERCICIO 11: GESTIÓN DE MOCHILA ===");
+// Agregar elementos
+mochila.push("linterna");
+console.log("Agregado: linterna");
+
+mochila.push("comida");
+console.log("Agregado: comida");
+
+mochila.push("mapa");
+console.log("Agregado: mapa");
+
+// Quitar el último elemento
+let elementoQuitado = mochila.pop();
+console.log("Quitado:", elementoQuitado);
+
+// Mostrar mochila final
+console.log("Mochila final:", mochila);
+console.log("========================================");
+
+// Ejercicio 12. Buscar un objeto en el inventario
+const inventario_C = ["espada", "poción", "llave", "escudo"];
+
+console.log("\n=== EJERCICIO 12: VERIFICAR LLAVE ===");
+console.log("Inventario:", inventario_C);
+
+if (inventario_C.includes("llave")) {
+  console.log("La puerta se abre");
+} else {
+  console.log("Necesitás una llave");
+}
+console.log("========================================");
+
+// Ejercicio 13. Crear una función de saludo
+function saludarUsuario(nombre) {
+  console.log("Hola, " + nombre + "!");
+}
+
+console.log("\n=== EJERCICIO 13: FUNCIÓN DE SALUDO ===");
+saludarUsuario("Milo");
+console.log("========================================");
+
+// Ejercicio 14. Función para calcular daño
+function calcularVidaRestante(vida, danio) {
+  return vida - danio;
+}
+
+console.log("\n=== EJERCICIO 14: CALCULAR VIDA RESTANTE ===");
+let resultado = calcularVidaRestante(100, 30);
+console.log("Vida restante:", resultado);
+console.log("========================================");
+
+// Ejercicio 15. Usar arrow functions
+const sumar = (a, b) => {
+  return a + b;
+};
+
+console.log("\n=== EJERCICIO 15: ARROW FUNCTION SUMAR ===");
+console.log("Resultado de sumar(10, 5):", sumar(10, 5));
+console.log("========================================");
