@@ -281,3 +281,57 @@ const personajeEncontrado = personajes_18.find((personaje) => {
 console.log("\n=== EJERCICIO 21: BUSCAR PERSONAJE ===");
 console.log(personajeEncontrado);
 console.log("========================================");
+
+// Ejercicio 22. Calcular total de vida
+const vidaTotal = personajes_18.reduce((acumulador, personaje) => {
+  return acumulador + personaje.vida;
+}, 0);
+
+console.log("\n=== EJERCICIO 22: VIDA TOTAL ===");
+console.log("Vida total de todos los personajes:", vidaTotal);
+console.log("========================================");
+
+// Ejercicio 23. Mostrar mensaje en pantalla
+const mensaje23 = document.getElementById("mensaje");
+
+mensaje23.textContent = "Bienvenido a la guía de JavaScript";
+
+// Desafío extra: Cambiar el color del texto
+mensaje23.style.color = "blue";
+
+console.log("\n=== EJERCICIO 23: MENSAJE EN PANTALLA ===");
+console.log("Mensaje mostrado en pantalla: 'Bienvenido a la guía de JavaScript' (en color azul)");
+console.log("========================================");
+
+// Ejercicio 24. Botón que suma puntos
+const boton24 = document.getElementById("btn");
+const mensaje24 = document.getElementById("mensaje");
+
+let puntos = 0;
+
+boton24.addEventListener("click", function () {
+  puntos += 10;
+  mensaje24.textContent = "Puntaje: " + puntos;
+});
+
+console.log("\n=== EJERCICIO 24: BOTÓN SUMA PUNTOS ===");
+console.log("Haz clic en el botón para sumar 10 puntos cada vez");
+console.log("========================================");
+
+// Ejercicio 25. Validar nombre de usuario
+const input26 = document.getElementById("dato");
+const boton25 = document.getElementById("btn");
+const mensaje25 = document.getElementById("mensaje");
+
+boton25.addEventListener("click", function () {
+  const nombre = input26.value.trim();
+  if (nombre === "") {
+    mensaje25.textContent = "Ingresá un nombre para continuar";
+  } else {
+    mensaje25.textContent = "Bienvenido/a, " + nombre;
+  }
+});
+
+console.log("\n=== EJERCICIO 25: VALIDACIÓN DE NOMBRE ===");
+console.log("Ingresa un nombre en el input y haz clic en el botón");
+console.log("========================================");
