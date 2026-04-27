@@ -168,3 +168,67 @@ const personaje = {
 4. **Interfaz de usuario**: Los arrays son perfectos para listas desplegables o grids, mientras que los objetos se usan para formularios o tarjetas de información.
 
 En resumen, en un videojuego usaríamos arrays para listas de ítems, niveles, puntuaciones, etc., y objetos para representar personajes, configuraciones, estados del juego, etc.
+
+# Ejercicio 30: Análisis de Eventos en JavaScript
+
+## Análisis del código de Ejercicio 25
+
+Como no se proporcionó un código específico para analizar en la consigna, analizaré el event listener del Ejercicio 25, que es uno de los más completos:
+
+```javascript
+const input26 = document.getElementById("dato");
+const boton25 = document.getElementById("btn");
+const mensaje25 = document.getElementById("mensaje");
+
+boton25.addEventListener("click", function () {
+  const nombre = input26.value.trim();
+  if (nombre === "") {
+    mensaje25.textContent = "Ingresá un nombre para continuar";
+  } else {
+    mensaje25.textContent = "Bienvenido/a, " + nombre;
+  }
+});
+```
+
+### ¿Qué elemento escucha el evento?
+
+El elemento que escucha el evento es `boton25`, que es una referencia al elemento HTML con id `"btn"` obtenido mediante `document.getElementById("btn")`. Este es típicamente un elemento `<button>` en el DOM.
+
+### ¿Qué evento se está escuchando?
+
+Se está escuchando el evento `"click"`, que se dispara cuando el usuario hace clic en el elemento botón. Este es uno de los eventos más comunes en interfaces web.
+
+### ¿Qué acción se ejecuta?
+
+La acción ejecutada es una función anónima que:
+1. Obtiene el valor del input (`input26.value`)
+2. Lo limpia de espacios en blanco con `.trim()`
+3. Verifica si el valor está vacío
+4. Si está vacío, muestra "Ingresá un nombre para continuar" en el elemento mensaje
+5. Si tiene contenido, muestra "Bienvenido/a, [nombre]" en el elemento mensaje
+
+### ¿Dónde podríamos aplicar esto en una página web o videojuego?
+
+Este patrón de event listener se puede aplicar en múltiples escenarios:
+
+#### En una página web:
+- **Formularios de login/registro**: Validar que el usuario ingrese un nombre antes de enviar el formulario
+- **Campos de búsqueda**: Mostrar mensaje si el campo de búsqueda está vacío
+- **Botones de envío**: Validar datos antes de procesar una compra o envío
+- **Interfaces de usuario**: Cambiar contenido dinámicamente basado en la entrada del usuario
+
+#### En un videojuego:
+- **Pantalla de inicio**: Pedir el nombre del jugador antes de comenzar la partida
+- **Sistema de inventario**: Validar que se seleccione un ítem antes de usarlo
+- **Menús de configuración**: Verificar que se ingrese un valor válido antes de guardar
+- **Sistema de chat**: Validar que el mensaje no esté vacío antes de enviarlo
+- **Creación de personaje**: Asegurar que se ingrese un nombre válido para el personaje
+- **Tienda del juego**: Verificar que se tenga suficiente oro antes de comprar un ítem
+
+#### Ventajas de este enfoque:
+1. **Interactividad**: Permite crear interfaces dinámicas que responden a la entrada del usuario
+2. **Validación**: Previene errores al verificar datos antes de procesarlos
+3. **Feedback inmediato**: El usuario recibe retroalimentación instantánea sobre sus acciones
+4. **Experiencia de usuario**: Hace que la aplicación se sienta más responsiva y profesional
+
+Este tipo de event listeners es fundamental para crear aplicaciones web y videojuegos interactivos modernos.
