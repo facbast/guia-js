@@ -335,3 +335,45 @@ boton25.addEventListener("click", function () {
 console.log("\n=== EJERCICIO 25: VALIDACIÓN DE NOMBRE ===");
 console.log("Ingresa un nombre en el input y haz clic en el botón");
 console.log("========================================");
+
+// Ejercicio 26: Guardar puntaje en LocalStorage
+const jugador26 = {
+ nombre: "Luna",
+ puntaje: 1500
+};
+
+// guardar en localStorage
+localStorage.setItem("jugadorGuardado", JSON.stringify(jugador26));
+
+// recuperar desde localStorage
+const jugadorRecuperado = JSON.parse(localStorage.getItem("jugadorGuardado"));
+
+// mostrar por consola
+console.log("\n=== EJERCICIO 26: LOCALSTORAGE ===");
+console.log("Jugador original:", jugador26);
+console.log("Jugador recuperado:", jugadorRecuperado);
+console.log("========================================");
+
+// Ejercicio 28. ¿Qué es el scope?
+
+function mostrarNombre() {
+ let nombre = "Local";
+ console.log(nombre);
+}
+
+mostrarNombre();
+console.log(nombre);
+
+// Ejercicio 29. Diferencia entre array y objeto
+const inventario29 = ["espada", "poción", "llave"];
+
+const jugador29 = {
+ nombre: "Luna",
+ vida: 100,
+ nivel: 3
+};
+
+// Ejercicio 30. Eventos en JavaScript
+boton.addEventListener("click", function () {
+ console.log("El usuario hizo clic");
+});
