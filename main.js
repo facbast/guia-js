@@ -205,3 +205,79 @@ const sumar = (a, b) => {
 console.log("\n=== EJERCICIO 15: ARROW FUNCTION SUMAR ===");
 console.log("Resultado de sumar(10, 5):", sumar(10, 5));
 console.log("========================================");
+
+// Ejercicio 16. Crear un objeto jugador
+const jugador = {
+ nombre: "Luna",
+ vida: 100,
+ energia: 80,
+ nivel: 1,
+ inventario: ["espada", "poción"]
+};
+
+console.log("\n=== EJERCICIO 16: OBJETO JUGADOR ===");
+console.log("Nombre:", jugador.nombre);
+console.log("Vida:", jugador.vida);
+console.log("Energía:", jugador.energia);
+console.log("Nivel:", jugador.nivel);
+console.log("Inventario:", jugador.inventario);
+console.log("========================================");
+
+// Ejercicio 17. Modificar propiedades de un objeto
+console.log("\n=== EJERCICIO 17: ACTUALIZAR OBJETO JUGADOR ===");
+
+// Aumentar el nivel en 1
+jugador.nivel += 1;
+
+// Sumar 50 monedas
+if (jugador.monedas === undefined) {
+  jugador.monedas = 0;
+}
+jugador.monedas += 50;
+
+// Mostrar el objeto actualizado
+console.log("Nuevo Nivel:", jugador.nivel);
+console.log("Monedas:", jugador.monedas);
+console.log("Objeto jugador completo:", jugador);
+console.log("========================================");
+
+// Ejercicio 18. Array de objetos
+const personajes_18 = [
+ { nombre: "Luna", vida: 100, tipo: "maga", nivel: 3 },
+ { nombre: "Kai", vida: 120, tipo: "guerrero", nivel: 4 },
+ { nombre: "Nina", vida: 90, tipo: "arquera", nivel: 2 }
+];
+
+console.log("\n=== EJERCICIO 18: PERSONAJES ===");
+for (let i = 0; i < personajes_18.length; i++) {
+  const personaje = personajes_18[i];
+  console.log(`El personaje ${personaje.nombre} es un ${personaje.tipo} de nivel ${personaje.nivel} con ${personaje.vida} de vida.`);
+}
+console.log("========================================");
+
+// Ejercicio 19. Filtrar personajes por nivel
+const personajesFuertes = personajes_18.filter((personaje) => {
+  return personaje.nivel >= 3;
+});
+
+console.log("\n=== EJERCICIO 19: PERSONAJES FUERTES ===");
+console.log(personajesFuertes);
+console.log("========================================");
+
+// Ejercicio 20. Obtener solo los nombres
+const nombres = personajes_18.map((personaje) => {
+  return personaje.nombre;
+});
+
+console.log("\n=== EJERCICIO 20: NOMBRES DE PERSONAJES ===");
+console.log(nombres);
+console.log("========================================");
+
+// Ejercicio 21. Buscar un personaje
+const personajeEncontrado = personajes_18.find((personaje) => {
+  return personaje.nombre === "Kai";
+});
+
+console.log("\n=== EJERCICIO 21: BUSCAR PERSONAJE ===");
+console.log(personajeEncontrado);
+console.log("========================================");
