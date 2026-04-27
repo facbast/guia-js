@@ -171,64 +171,66 @@ En resumen, en un videojuego usaríamos arrays para listas de ítems, niveles, p
 
 # Ejercicio 30: Análisis de Eventos en JavaScript
 
-## Análisis del código de Ejercicio 25
-
-Como no se proporcionó un código específico para analizar en la consigna, analizaré el event listener del Ejercicio 25, que es uno de los más completos:
-
+## Código analizado:
 ```javascript
-const input26 = document.getElementById("dato");
-const boton25 = document.getElementById("btn");
-const mensaje25 = document.getElementById("mensaje");
+boton.addEventListener("click", function () {
+  console.log("El usuario hizo clic");
+});
+```
 
-boton25.addEventListener("click", function () {
-  const nombre = input26.value.trim();
-  if (nombre === "") {
-    mensaje25.textContent = "Ingresá un nombre para continuar";
-  } else {
-    mensaje25.textContent = "Bienvenido/a, " + nombre;
+## ¿Qué elemento escucha el evento?
+
+El elemento que escucha el evento es `boton`, que hace referencia a un elemento HTML con el id "btn" (basándonos en el contexto del código visto anteriormente en main.js). Este es típicamente un elemento `<button>` en el DOM.
+
+## ¿Qué evento se está escuchando?
+
+Se está escuchando el evento `"click"`, que se dispara cuando el usuario hace clic en el elemento botón.
+
+## ¿Qué acción se ejecuta?
+
+Cuando ocurre el evento click, se ejecuta una función anónima que contiene:
+```javascript
+console.log("El usuario hizo clic");
+```
+
+Esta acción registra el mensaje "El usuario hizo clic" en la consola del navegador.
+
+## ¿Dónde podríamos aplicar esto en una página web o videojuego?
+
+Este patrón de eventos se puede aplicar en múltiples situaciones tanto en páginas web como en videojuegos:
+
+### En una página web:
+1. **Botones de navegación**: Cambiar secciones de la página
+2. **Formularios**: Validar y enviar datos
+3. **Menús desplegables**: Mostrar/ocultar opciones
+4. **Galerías de imágenes**: Cambiar imagen al hacer clic
+5. **Contadores**: Incrementar valores al presionar botones
+
+### En un videojuego (especialmente juegos web):
+1. **Botones de acción**: Atacar, defender, usar ítems
+2. **Menú principal**: Iniciar juego, ver opciones, salir
+3. **Controles del juego**: Mover personaje, saltar, disparar
+4. **Interfaz de inventario**: Seleccionar ítems
+5. **Diálogos**: Avanzar texto o elegir opciones
+6. **Sistema de puntuación**: Registrar clics para mini-juegos
+7. **Botones de pausa/reanudar**: Controlar el flujo del juego
+
+### Ejemplo práctico en un videojuego:
+```javascript
+// Botón de ataque
+const botonAtacar = document.getElementById("atacar");
+botonAtacar.addEventListener("click", function() {
+  // Reducir vida del enemigo
+  enemigo.vida -= 10;
+  // Actualizar interfaz
+  actualizarVidaEnemigo();
+  // Reproducir sonido de ataque
+  reproducirSonido("ataque.wav");
+  // Verificar si el enemigo murió
+  if (enemigo.vida <= 0) {
+    mostrarMensajeVictoria();
   }
 });
 ```
 
-### ¿Qué elemento escucha el evento?
-
-El elemento que escucha el evento es `boton25`, que es una referencia al elemento HTML con id `"btn"` obtenido mediante `document.getElementById("btn")`. Este es típicamente un elemento `<button>` en el DOM.
-
-### ¿Qué evento se está escuchando?
-
-Se está escuchando el evento `"click"`, que se dispara cuando el usuario hace clic en el elemento botón. Este es uno de los eventos más comunes en interfaces web.
-
-### ¿Qué acción se ejecuta?
-
-La acción ejecutada es una función anónima que:
-1. Obtiene el valor del input (`input26.value`)
-2. Lo limpia de espacios en blanco con `.trim()`
-3. Verifica si el valor está vacío
-4. Si está vacío, muestra "Ingresá un nombre para continuar" en el elemento mensaje
-5. Si tiene contenido, muestra "Bienvenido/a, [nombre]" en el elemento mensaje
-
-### ¿Dónde podríamos aplicar esto en una página web o videojuego?
-
-Este patrón de event listener se puede aplicar en múltiples escenarios:
-
-#### En una página web:
-- **Formularios de login/registro**: Validar que el usuario ingrese un nombre antes de enviar el formulario
-- **Campos de búsqueda**: Mostrar mensaje si el campo de búsqueda está vacío
-- **Botones de envío**: Validar datos antes de procesar una compra o envío
-- **Interfaces de usuario**: Cambiar contenido dinámicamente basado en la entrada del usuario
-
-#### En un videojuego:
-- **Pantalla de inicio**: Pedir el nombre del jugador antes de comenzar la partida
-- **Sistema de inventario**: Validar que se seleccione un ítem antes de usarlo
-- **Menús de configuración**: Verificar que se ingrese un valor válido antes de guardar
-- **Sistema de chat**: Validar que el mensaje no esté vacío antes de enviarlo
-- **Creación de personaje**: Asegurar que se ingrese un nombre válido para el personaje
-- **Tienda del juego**: Verificar que se tenga suficiente oro antes de comprar un ítem
-
-#### Ventajas de este enfoque:
-1. **Interactividad**: Permite crear interfaces dinámicas que responden a la entrada del usuario
-2. **Validación**: Previene errores al verificar datos antes de procesarlos
-3. **Feedback inmediato**: El usuario recibe retroalimentación instantánea sobre sus acciones
-4. **Experiencia de usuario**: Hace que la aplicación se sienta más responsiva y profesional
-
-Este tipo de event listeners es fundamental para crear aplicaciones web y videojuegos interactivos modernos.
+Los eventos son fundamentales en la interactividad de aplicaciones web y videojuegos, permitiendo que la interfaz responda a las acciones del usuario de manera dinámica.
