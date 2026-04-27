@@ -60,20 +60,6 @@ Existen diferentes tipos de scope:
 
 ## Análisis del código proporcionado
 
-El código proporcionado parece incompleto, pero basándome en el contexto de ejercicios sobre scope, asumiré que se refiere a un ejemplo típico como este:
-
-```javascript
-let nombre = "Global";
-
-function mostrarNombre() {
-  let nombre = "Local";
-  console.log(nombre); // ¿Qué se muestra?
-}
-
-console.log(nombre); // ¿Qué se muestra?
-mostrarNombre();
-```
-
 ### ¿Qué se muestra primero?
 
 Primero se muestra `"Global"` porque la primera línea `console.log(nombre);` accede a la variable `nombre` declarada en el scope global.
@@ -110,3 +96,75 @@ Salida:
 Fuera de la función: Global
 Dentro de la función: Local
 ```
+
+# Ejercicio 29: Arrays vs Objetos en Videojuegos
+
+## ¿Cuándo conviene usar un array y cuándo conviene usar un objeto?
+
+La elección entre arrays y objetos depende de la naturaleza de los datos que necesitamos almacenar y cómo vamos a acceder a ellos.
+
+### Usar Arrays cuando:
+- Los datos son del mismo tipo y necesitamos acceder por posición/índice
+- El orden de los elementos es importante
+- Necesitamos operaciones como agregar/quitar elementos del final o principio
+- Los datos son secuenciales o listas ordenadas
+
+### Usar Objetos cuando:
+- Los datos tienen propiedades nombradas y necesitamos acceder por nombre/clave
+- Los datos son heterogéneos (diferentes tipos)
+- Necesitamos representar una entidad con múltiples atributos
+- El acceso por nombre es más intuitivo que por posición
+
+## Ejemplo relacionado con un videojuego: Sistema de Inventario
+
+Imaginemos un videojuego RPG donde necesitamos gestionar el inventario del jugador y las estadísticas de los personajes.
+
+### Array para el Inventario (lista ordenada de ítems)
+```javascript
+const inventario = [
+  "espada",
+  "poción de vida",
+  "llave dorada",
+  "arco",
+  "escudo"
+];
+```
+
+**¿Qué representa?**
+- Una lista ordenada de ítems que el jugador ha recogido
+- El orden puede representar el orden en que fueron obtenidos
+- Accedemos por posición: `inventario[0]` = "espada"
+- Podemos agregar nuevos ítems: `inventario.push("armadura")`
+- Es útil para mostrar el inventario en una interfaz de lista
+
+### Objeto para las Estadísticas del Personaje
+```javascript
+const personaje = {
+  nombre: "Eldrin el Valiente",
+  nivel: 15,
+  vida: 120,
+  mana: 80,
+  clase: "Guerrero",
+  experiencia: 2500,
+  habilidades: ["Golpe Poderoso", "Defensa Total", "Carga Heroica"]
+};
+```
+
+**¿Qué representa?**
+- Una entidad con múltiples propiedades relacionadas
+- Cada propiedad tiene un nombre descriptivo y un valor
+- Accedemos por nombre: `personaje.nombre` = "Eldrin el Valiente"
+- Es útil para representar una ficha de personaje completa
+- Las propiedades pueden ser de diferentes tipos (string, number, array)
+
+## ¿Por qué esta distinción es importante en videojuegos?
+
+1. **Rendimiento**: Los arrays son más eficientes para operaciones secuenciales, mientras que los objetos son mejores para acceso directo por nombre.
+
+2. **Legibilidad del código**: Usar la estructura correcta hace el código más intuitivo y fácil de mantener.
+
+3. **Funcionalidad**: Los arrays tienen métodos como `map`, `filter`, `reduce` para procesamiento de listas, mientras que los objetos son ideales para representar entidades complejas.
+
+4. **Interfaz de usuario**: Los arrays son perfectos para listas desplegables o grids, mientras que los objetos se usan para formularios o tarjetas de información.
+
+En resumen, en un videojuego usaríamos arrays para listas de ítems, niveles, puntuaciones, etc., y objetos para representar personajes, configuraciones, estados del juego, etc.
